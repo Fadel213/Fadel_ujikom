@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f6f8fc, #e0e7ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #333;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 150px;
+    background: #f9fafb;
+    transition: 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+}
+
+form button {
+    padding: 12px 20px;
+    background-color: #6366f1;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #4f46e5;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.task-item strong {
+    font-size: 18px;
+    display: block;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.task-item small {
+    color: #6b7280;
+}
+
+.task-item a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    color: #4f46e5;
+    font-weight: 500;
+}
+
+.task-item a:hover {
+    text-decoration: underline;
+}
+
+ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul ul li {
+    font-size: 14px;
+    padding: 4px 0;
+    color: #555;
+}
+
+.subtask-form {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.subtask-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.subtask-form button {
+    padding: 10px 14px;
+    background: #10b981;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.subtask-form button:hover {
+    background: #059669;
+}
+
+.btn-delete {
+    color: #ef4444 !important;
+}
+
+.btn-delete:hover {
+    color: #dc2626 !important;
+}
+
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    form input,
+    form select,
+    form button {
+        width: 100%;
+    }
+}
