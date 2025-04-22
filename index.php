@@ -136,9 +136,11 @@ $result = $conn->query($query);
                 <ul>
                     <?php while ($subtask = $subtask_result->fetch_assoc()): ?>
                         <li>
-                            <?= $subtask['nama']; ?> - <?= $subtask['status']; ?>
-                            <a href="toggle_subtask.php?id=<?= $subtask['id']; ?>">Selesai</a>
-                        </li>
+                         <?= $subtask['nama']; ?> - <?= $subtask['status']; ?>
+                         <a href="toggle_subtask.php?id=<?= $subtask['id']; ?>">Selesai</a> |
+                         <a href="edit_subtask.php?id=<?= $subtask['id']; ?>" onclick="return confirm('Edit subtask ini?')">Edit</a> |
+                         <a href="delete_subtask.php?id=<?= $subtask['id']; ?>" onclick="return confirm('Yakin ingin hapus subtask ini?')">Hapus</a>
+                     </li>
                     <?php endwhile; ?>
                 </ul>
                 
