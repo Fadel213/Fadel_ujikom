@@ -71,23 +71,9 @@ $result = $conn->query($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <link rel="stylesheet" href="css/styles2.css">
-    <script>
-        function confirmDelete(id) {
-            return confirm("Apakah Anda yakin ingin menghapus item ini?");
-        }
-        function checkDeadlines() {
-            let today = new Date().toISOString().split('T')[0];
-            document.querySelectorAll('.task-item').forEach(task => {
-                let deadline = task.getAttribute('data-deadline');
-                if (deadline < today) {
-                    task.style.color = 'red';
-                    alert("Tugas '" + task.getAttribute('data-name') + "' sudah melewati deadline!");
-                }
-            });
-        }
-        window.onload = checkDeadlines;
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
 <div class="container">
@@ -102,7 +88,7 @@ $result = $conn->query($query);
             <option value="Belum Selesai" <?= $status_filter == "Belum Selesai" ? "selected" : ""; ?>>Belum Selesai</option>
             <option value="Selesai" <?= $status_filter == "Selesai" ? "selected" : ""; ?>>Selesai</option>
         </select>
-        <button type="submit">Cari</button>
+        <button type="submit"><i class="bi bi-pencil-square"></i></button>
     </form>
 
     <!-- Form Tambah Tugas -->
@@ -114,7 +100,7 @@ $result = $conn->query($query);
             <option value="Rendah">Rendah</option>
         </select>
         <input type="date" name="tanggal" required>
-        <button type="submit" name="add_task">Tambah Tugas</button>
+        <button type="submit" name="add_task"><i class="bi bi-check2-circle"></i></button>
     </form>
 
     <h3>Daftar Tugas</h3>
@@ -134,14 +120,14 @@ $result = $conn->query($query);
                 $subtask_result = $conn->query($subtask_query);
                 ?>
                 <ul>
-                    <?php while ($subtask = $subtask_result->fetch_assoc()): ?>
-                        <li>
+                   <?php while ($subtask = $subtask_result->fetch_assoc()): ?>
+                     <li>
                          <?= $subtask['nama']; ?> - <?= $subtask['status']; ?>
                          <a href="toggle_subtask.php?id=<?= $subtask['id']; ?>">Selesai</a> |
                          <a href="edit_subtask.php?id=<?= $subtask['id']; ?>" onclick="return confirm('Edit subtask ini?')">Edit</a> |
                          <a href="delete_subtask.php?id=<?= $subtask['id']; ?>" onclick="return confirm('Yakin ingin hapus subtask ini?')">Hapus</a>
                      </li>
-                    <?php endwhile; ?>
+                  <?php endwhile; ?>
                 </ul>
                 
                 <!-- Form tambah subtasks -->
