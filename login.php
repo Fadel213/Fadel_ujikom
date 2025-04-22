@@ -33,7 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/styles3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="js/ShowHide.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -45,10 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password (min. 8 karakter)" required minlength="8">
+            <div class="password-wrapper">
+                     <input type="password" name="password" placeholder="Password (min. 8 karakter)" required minlength="8">
+                     <span id="showHide"><i class="bi bi-eye"></i></span>
+                </div>
             <button type="submit">Login</button>
         </form>
-        
         <p>Belum punya akun? <a href="register.php">Daftar</a></p>
     </div>
 </body>
